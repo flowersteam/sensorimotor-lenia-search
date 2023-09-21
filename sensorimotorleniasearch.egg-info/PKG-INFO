@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: sensorimotorleniasearch
+Version: 0.0.1
+Summary: Packages for automated discovery experiments by Flowers, Inria.
+Author: Gautier Hamon, Mayalen Etcheverry
+Author-email: gautier.hamon@inria.fr
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# Automated Discovery of Sensorimot Patterns in Lenia
+
+16.06.2022, Version 1
+
+
+More information: https://developmentalsystems.org/sensorimotor-lenia/
+
+Contact us for questions or comments: gautier.hamon@inria.fr
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+build/
+*.pickle
+stderr.txt
+__pycache__/

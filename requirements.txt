@@ -1,0 +1,13 @@
+pytorch
+torchvision
+addict
+imageio
+matplotlib
+tqdm
+moviepy
+grpcio
+pygifsicle
+h5py
+scikit-learn
+NBT
+odfpy
