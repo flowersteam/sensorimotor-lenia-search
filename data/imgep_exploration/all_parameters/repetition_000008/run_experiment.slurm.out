@@ -1,0 +1,373 @@
+Run the experiment ...
+REP v_01 source code
+seed(repetition id): 8
+NEW TRY OF INIT
+Exploration: 
+40
+NEW TRY OF INIT
+Exploration: 
+40
+NEW TRY OF INIT
+Exploration: 
+40
+NEW TRY OF INIT
+Exploration: 
+40
+Run 42, optimisation toward goal: 
+TARGET =tensor([0.0650, 0.0000, 0.0700])
+reached= tensor([ 0.0773, -0.0008,  0.0937])
+Run 43, optimisation toward goal: 
+TARGET =tensor([0.0650, 0.0000, 0.0100])
+reached= tensor([ 0.0757, -0.0022,  0.0368])
+Run 44, optimisation toward goal: 
+TARGET =tensor([ 0.0650,  0.0000, -0.0500])
+reached= tensor([10.,  0.,  0.])
+Run 45, optimisation toward goal: 
+TARGET =tensor([ 0.0650,  0.0000, -0.1100])
+reached= tensor([ 1.0000e+01, -5.7629e-03,  3.2616e-02])
+Run 46, optimisation toward goal: 
+TARGET =tensor([ 0.0650,  0.0000, -0.1700])
+reached= tensor([10.,  0.,  0.])
+Run 47, optimisation toward goal: 
+TARGET =tensor([ 0.0650,  0.0000, -0.2300])
+reached= tensor([10.,  0.,  0.])
+Run 48, optimisation toward goal: 
+TARGET =tensor([ 0.0622,  0.0338, -0.0198])
+reached= tensor([0.0796, 0.0220, 0.0120])
+Run 49, optimisation toward goal: 
+TARGET =tensor([ 0.0635,  0.0606, -0.0726])
+reached= tensor([10.,  0.,  0.])
+Run 50, optimisation toward goal: 
+TARGET =tensor([ 0.0658,  0.0149, -0.0387])
+reached= tensor([10.,  0.,  0.])
+Run 51, optimisation toward goal: 
+TARGET =tensor([ 0.0631,  0.0438, -0.0112])
+reached= tensor([10.,  0.,  0.])
+Run 52, optimisation toward goal: 
+TARGET =tensor([ 0.0638,  0.0393, -0.0373])
+reached= tensor([ 0.1035, -0.0085,  0.2541])
+Run 53, optimisation toward goal: 
+TARGET =tensor([ 0.0641, -0.0072, -0.0116])
+reached= tensor([10.,  0.,  0.])
+Run 54, optimisation toward goal: 
+TARGET =tensor([ 0.0618,  0.0715, -0.0426])
+reached= tensor([10.,  0.,  0.])
+Run 55, optimisation toward goal: 
+TARGET =tensor([ 0.0682, -0.0153, -0.0114])
+reached= tensor([10.,  0.,  0.])
+Run 56, optimisation toward goal: 
+TARGET =tensor([ 0.0650, -0.0091, -0.0187])
+reached= tensor([10.,  0.,  0.])
+Run 57, optimisation toward goal: 
+TARGET =tensor([ 0.0656,  0.0547, -0.0468])
+reached= tensor([10.,  0.,  0.])
+Run 58, optimisation toward goal: 
+TARGET =tensor([ 0.0643, -0.0094, -0.0358])
+reached= tensor([10.,  0.,  0.])
+Run 59, optimisation toward goal: 
+TARGET =tensor([ 0.0644,  0.0663, -0.0271])
+reached= tensor([10.,  0.,  0.])
+Run 60, optimisation toward goal: 
+TARGET =tensor([ 0.0681, -0.0184, -0.0138])
+reached= tensor([10.,  0.,  0.])
+Run 61, optimisation toward goal: 
+TARGET =tensor([ 0.0660,  0.0477, -0.0228])
+reached= tensor([0.0807, 0.0450, 0.0175])
+Run 62, optimisation toward goal: 
+TARGET =tensor([ 0.0637, -0.0256, -0.0289])
+reached= tensor([10.,  0.,  0.])
+Run 63, optimisation toward goal: 
+TARGET =tensor([ 0.0672,  0.0725, -0.0304])
+reached= tensor([10.,  0.,  0.])
+Run 64, optimisation toward goal: 
+TARGET =tensor([ 0.0652,  0.0630, -0.0249])
+reached= tensor([0.0797, 0.0606, 0.0122])
+Run 65, optimisation toward goal: 
+TARGET =tensor([ 0.0652,  0.0487, -0.0399])
+reached= tensor([10.,  0.,  0.])
+Run 66, optimisation toward goal: 
+TARGET =tensor([ 0.0661, -0.0326, -0.0427])
+reached= tensor([10.,  0.,  0.])
+Run 67, optimisation toward goal: 
+TARGET =tensor([ 0.0638,  0.0638, -0.0390])
+reached= tensor([10.,  0.,  0.])
+Run 68, optimisation toward goal: 
+TARGET =tensor([ 0.0659, -0.0044, -0.0282])
+reached= tensor([10.,  0.,  0.])
+Run 69, optimisation toward goal: 
+TARGET =tensor([ 0.0643,  0.0247, -0.0441])
+reached= tensor([10.,  0.,  0.])
+Run 70, optimisation toward goal: 
+TARGET =tensor([ 0.0659,  0.0430, -0.0464])
+reached= tensor([10.,  0.,  0.])
+Run 71, optimisation toward goal: 
+TARGET =tensor([ 0.0636,  0.0776, -0.0307])
+reached= tensor([ 0.0746,  0.0661, -0.0080])
+Run 72, optimisation toward goal: 
+TARGET =tensor([ 0.0662, -0.0262, -0.0270])
+reached= tensor([10.,  0.,  0.])
+Run 73, optimisation toward goal: 
+TARGET =tensor([ 0.0652,  0.0266, -0.0532])
+reached= tensor([10.,  0.,  0.])
+Run 74, optimisation toward goal: 
+TARGET =tensor([ 0.0679,  0.0457, -0.0629])
+reached= tensor([0.0743, 0.0348, 0.0080])
+Run 75, optimisation toward goal: 
+TARGET =tensor([ 0.0643,  0.0707, -0.0642])
+reached= tensor([10.,  0.,  0.])
+Run 76, optimisation toward goal: 
+TARGET =tensor([ 0.0661,  0.0728, -0.0534])
+reached= tensor([10.,  0.,  0.])
+Run 77, optimisation toward goal: 
+TARGET =tensor([ 0.0631,  0.0716, -0.0622])
+reached= tensor([10.,  0.,  0.])
+Run 78, optimisation toward goal: 
+TARGET =tensor([ 0.0634,  0.1073, -0.0489])
+reached= tensor([ 0.0755,  0.0973, -0.0087])
+Run 79, optimisation toward goal: 
+TARGET =tensor([ 0.0623,  0.1221, -0.0375])
+reached= tensor([ 0.0783,  0.1173, -0.0116])
+Run 80, optimisation toward goal: 
+TARGET =tensor([ 0.0650,  0.1461, -0.0394])
+reached= tensor([ 0.0734,  0.1401, -0.0160])
+Run 81, optimisation toward goal: 
+TARGET =tensor([ 0.0660,  0.1316, -0.0570])
+reached= tensor([10.,  0.,  0.])
+Run 82, optimisation toward goal: 
+TARGET =tensor([ 0.0657,  0.1574, -0.0696])
+reached= tensor([0.0819, 0.0021, 0.2342])
+Run 83, optimisation toward goal: 
+TARGET =tensor([ 0.0644,  0.1527, -0.0576])
+reached= tensor([10.,  0.,  0.])
+Run 84, optimisation toward goal: 
+TARGET =tensor([ 0.0667,  0.1722, -0.0600])
+reached= tensor([10.,  0.,  0.])
+Run 85, optimisation toward goal: 
+TARGET =tensor([ 0.0693,  0.1434, -0.0705])
+reached= tensor([ 0.0748,  0.1307, -0.0404])
+Run 86, optimisation toward goal: 
+TARGET =tensor([ 0.0627,  0.1721, -0.0909])
+reached= tensor([ 0.0740,  0.1577, -0.0331])
+Run 87, optimisation toward goal: 
+TARGET =tensor([ 0.0647,  0.1363, -0.0956])
+reached= tensor([10.,  0.,  0.])
+Run 88, optimisation toward goal: 
+TARGET =tensor([ 0.0673,  0.1876, -0.0777])
+reached= tensor([10.,  0.,  0.])
+Run 89, optimisation toward goal: 
+TARGET =tensor([ 0.0668,  0.1190, -0.0818])
+reached= tensor([ 0.0797,  0.0992, -0.0204])
+Run 90, optimisation toward goal: 
+TARGET =tensor([ 0.0621,  0.0922, -0.0865])
+reached= tensor([ 0.0727,  0.0846, -0.0539])
+Run 91, optimisation toward goal: 
+TARGET =tensor([ 0.0662,  0.0321, -0.1065])
+reached= tensor([ 0.0727,  0.0115, -0.0575])
+Run 92, optimisation toward goal: 
+TARGET =tensor([ 0.0630, -0.0230, -0.1007])
+reached= tensor([ 0.0682, -0.0512,  0.2015])
+Run 93, optimisation toward goal: 
+TARGET =tensor([ 0.0678, -0.0267, -0.0862])
+reached= tensor([ 0.0768, -0.0056, -0.0301])
+Run 94, optimisation toward goal: 
+TARGET =tensor([ 0.0613, -0.0106, -0.1051])
+reached= tensor([ 0.0718,  0.0059, -0.0696])
+Run 95, optimisation toward goal: 
+TARGET =tensor([ 0.0666, -0.0177, -0.1143])
+reached= tensor([ 0.0711, -0.0222, -0.0620])
+Run 96, optimisation toward goal: 
+TARGET =tensor([ 0.0656, -0.0472, -0.0957])
+reached= tensor([10.,  0.,  0.])
+Run 97, optimisation toward goal: 
+TARGET =tensor([ 0.0665,  0.0319, -0.0951])
+reached= tensor([ 0.0729,  0.0350, -0.0492])
+Run 98, optimisation toward goal: 
+TARGET =tensor([ 0.0638, -0.0488, -0.1200])
+reached= tensor([10.,  0.,  0.])
+Run 99, optimisation toward goal: 
+TARGET =tensor([ 0.0649, -0.0269, -0.1230])
+reached= tensor([10.,  0.,  0.])
+Run 100, optimisation toward goal: 
+TARGET =tensor([ 0.0631, -0.1000, -0.0893])
+reached= tensor([ 0.0689, -0.0889, -0.0731])
+Run 101, optimisation toward goal: 
+TARGET =tensor([ 0.0656, -0.0433, -0.1154])
+reached= tensor([10.,  0.,  0.])
+Run 102, optimisation toward goal: 
+TARGET =tensor([ 0.0642, -0.1113, -0.0754])
+reached= tensor([10.,  0.,  0.])
+Run 103, optimisation toward goal: 
+TARGET =tensor([ 0.0631,  0.0052, -0.1637])
+reached= tensor([10.,  0.,  0.])
+Run 104, optimisation toward goal: 
+TARGET =tensor([ 0.0637, -0.0918, -0.1720])
+reached= tensor([10.,  0.,  0.])
+Run 105, optimisation toward goal: 
+TARGET =tensor([ 0.0660, -0.0324, -0.1599])
+reached= tensor([10.,  0.,  0.])
+Run 106, optimisation toward goal: 
+TARGET =tensor([ 0.0639, -0.0437, -0.1594])
+reached= tensor([0.0807, 0.0509, 0.3027])
+Run 107, optimisation toward goal: 
+TARGET =tensor([ 0.0653, -0.0417, -0.1330])
+reached= tensor([10.,  0.,  0.])
+Run 108, optimisation toward goal: 
+TARGET =tensor([ 0.0639, -0.0610, -0.1537])
+reached= tensor([ 0.0722, -0.0595, -0.0543])
+Run 109, optimisation toward goal: 
+TARGET =tensor([ 0.0652, -0.1256, -0.1233])
+reached= tensor([ 0.0760, -0.0490,  0.1431])
+Run 110, optimisation toward goal: 
+TARGET =tensor([ 0.0659, -0.0974, -0.0933])
+reached= tensor([ 0.0680, -0.0887, -0.0680])
+Run 111, optimisation toward goal: 
+TARGET =tensor([ 0.0651, -0.1562, -0.0795])
+reached= tensor([ 0.0705, -0.1565, -0.0359])
+Run 112, optimisation toward goal: 
+TARGET =tensor([ 0.0639, -0.1391, -0.1092])
+reached= tensor([10.,  0.,  0.])
+Run 113, optimisation toward goal: 
+TARGET =tensor([ 0.0645, -0.0597, -0.1580])
+reached= tensor([10.,  0.,  0.])
+Run 114, optimisation toward goal: 
+TARGET =tensor([ 0.0618, -0.0632, -0.1327])
+reached= tensor([ 0.0728, -0.0270, -0.0963])
+Run 115, optimisation toward goal: 
+TARGET =tensor([ 0.0617, -0.1104, -0.1637])
+reached= tensor([10.,  0.,  0.])
+Run 116, optimisation toward goal: 
+TARGET =tensor([ 0.0647,  0.0601, -0.1102])
+reached= tensor([ 0.0710,  0.0626, -0.0717])
+Run 117, optimisation toward goal: 
+TARGET =tensor([ 0.0640, -0.0653, -0.1461])
+reached= tensor([10.,  0.,  0.])
+Run 118, optimisation toward goal: 
+TARGET =tensor([ 0.0607,  0.0011, -0.1222])
+reached= tensor([10.,  0.,  0.])
+Run 119, optimisation toward goal: 
+TARGET =tensor([ 0.0637, -0.0321, -0.1419])
+reached= tensor([10.,  0.,  0.])
+Run 120, optimisation toward goal: 
+TARGET =tensor([ 0.0650, -0.0910, -0.1340])
+reached= tensor([ 0.0730, -0.1203, -0.0766])
+Run 121, optimisation toward goal: 
+TARGET =tensor([ 0.0663,  0.1356, -0.1009])
+reached= tensor([ 0.0779,  0.0994, -0.0338])
+Run 122, optimisation toward goal: 
+TARGET =tensor([ 0.0655, -0.0871, -0.1366])
+reached= tensor([ 0.0717, -0.0987, -0.0830])
+Run 123, optimisation toward goal: 
+TARGET =tensor([ 0.0640,  0.1085, -0.1444])
+reached= tensor([ 0.0756,  0.0841, -0.0651])
+Run 124, optimisation toward goal: 
+TARGET =tensor([ 0.0679,  0.0221, -0.1545])
+reached= tensor([10.,  0.,  0.])
+Run 125, optimisation toward goal: 
+TARGET =tensor([ 0.0629, -0.0159, -0.1495])
+reached= tensor([10.,  0.,  0.])
+Run 126, optimisation toward goal: 
+TARGET =tensor([ 0.0632,  0.0398, -0.1620])
+reached= tensor([ 0.0746,  0.0257, -0.1117])
+Run 127, optimisation toward goal: 
+TARGET =tensor([ 0.0690, -0.1473, -0.1391])
+reached= tensor([10.,  0.,  0.])
+Run 128, optimisation toward goal: 
+TARGET =tensor([ 0.0668,  0.0474, -0.1580])
+reached= tensor([ 0.0768,  0.0621, -0.0872])
+Run 129, optimisation toward goal: 
+TARGET =tensor([ 0.0638,  0.0846, -0.1880])
+reached= tensor([10.,  0.,  0.])
+Run 130, optimisation toward goal: 
+TARGET =tensor([ 0.0638, -0.1901, -0.0663])
+reached= tensor([ 0.0703, -0.1736, -0.0412])
+Run 131, optimisation toward goal: 
+TARGET =tensor([ 0.0638, -0.0171, -0.1612])
+reached= tensor([ 0.0737,  0.0221, -0.1110])
+Run 132, optimisation toward goal: 
+TARGET =tensor([ 0.0676, -0.0810, -0.1555])
+reached= tensor([ 0.0791, -0.0693, -0.0825])
+Run 133, optimisation toward goal: 
+TARGET =tensor([ 0.0649, -0.0049, -0.1610])
+reached= tensor([10.,  0.,  0.])
+Run 134, optimisation toward goal: 
+TARGET =tensor([ 0.0644, -0.0068, -0.1881])
+reached= tensor([0.1069, 0.0177, 0.2500])
+Run 135, optimisation toward goal: 
+TARGET =tensor([ 0.0682, -0.0004, -0.1573])
+reached= tensor([ 0.0726,  0.0113, -0.0968])
+Run 136, optimisation toward goal: 
+TARGET =tensor([ 0.0636,  0.0592, -0.2038])
+reached= tensor([10.,  0.,  0.])
+Run 137, optimisation toward goal: 
+TARGET =tensor([ 0.0645,  0.0160, -0.1562])
+reached= tensor([0.0757, 0.2479, 0.3221])
+Run 138, optimisation toward goal: 
+TARGET =tensor([ 0.0670,  0.1289, -0.1224])
+reached= tensor([ 0.0734,  0.1080, -0.0845])
+Run 139, optimisation toward goal: 
+TARGET =tensor([ 0.0673,  0.0797, -0.1421])
+reached= tensor([10.,  0.,  0.])
+Run 140, optimisation toward goal: 
+TARGET =tensor([ 0.0642, -0.0134, -0.1569])
+reached= tensor([10.,  0.,  0.])
+Run 141, optimisation toward goal: 
+TARGET =tensor([ 0.0651,  0.0654, -0.1707])
+reached= tensor([10.,  0.,  0.])
+Run 142, optimisation toward goal: 
+TARGET =tensor([ 0.0646,  0.1416, -0.1750])
+reached= tensor([10.,  0.,  0.])
+Run 143, optimisation toward goal: 
+TARGET =tensor([ 0.0674,  0.0636, -0.1762])
+reached= tensor([10.,  0.,  0.])
+Run 144, optimisation toward goal: 
+TARGET =tensor([ 0.0652, -0.1697, -0.0183])
+reached= tensor([ 0.0736, -0.1442, -0.0189])
+Run 145, optimisation toward goal: 
+TARGET =tensor([ 0.0655,  0.0554, -0.1832])
+reached= tensor([10.,  0.,  0.])
+Run 146, optimisation toward goal: 
+TARGET =tensor([ 0.0626,  0.1046, -0.1320])
+reached= tensor([10.,  0.,  0.])
+Run 147, optimisation toward goal: 
+TARGET =tensor([ 0.0640,  0.0314, -0.1672])
+reached= tensor([10.,  0.,  0.])
+Run 148, optimisation toward goal: 
+TARGET =tensor([ 0.0681, -0.0206, -0.1586])
+reached= tensor([ 1.0000e+01,  2.0738e-03, -1.3267e-02])
+Run 149, optimisation toward goal: 
+TARGET =tensor([ 0.0641, -0.0198, -0.1705])
+reached= tensor([10.,  0.,  0.])
+Run 150, optimisation toward goal: 
+TARGET =tensor([ 0.0641, -0.0379, -0.1521])
+reached= tensor([10.,  0.,  0.])
+Run 151, optimisation toward goal: 
+TARGET =tensor([ 0.0675,  0.0641, -0.1560])
+reached= tensor([10.,  0.,  0.])
+Run 152, optimisation toward goal: 
+TARGET =tensor([ 0.0637,  0.0266, -0.2019])
+reached= tensor([10.,  0.,  0.])
+Run 153, optimisation toward goal: 
+TARGET =tensor([ 0.0673, -0.0269, -0.1523])
+reached= tensor([0.0846, 0.0149, 0.2635])
+Run 154, optimisation toward goal: 
+TARGET =tensor([ 0.0670,  0.1361, -0.1516])
+reached= tensor([10.,  0.,  0.])
+Run 155, optimisation toward goal: 
+TARGET =tensor([ 0.0632,  0.0186, -0.1692])
+reached= tensor([10.,  0.,  0.])
+Run 156, optimisation toward goal: 
+TARGET =tensor([ 0.0621,  0.0455, -0.1542])
+reached= tensor([ 0.0751,  0.0516, -0.0594])
+Run 157, optimisation toward goal: 
+TARGET =tensor([ 0.0636,  0.0146, -0.1624])
+reached= tensor([ 0.0794, -0.0196, -0.0977])
+Run 158, optimisation toward goal: 
+TARGET =tensor([ 0.0653,  0.1383, -0.1313])
+reached= tensor([10.,  0.,  0.])
+Run 159, optimisation toward goal: 
+TARGET =tensor([ 0.0701,  0.0740, -0.1552])
+reached= tensor([10.,  0.,  0.])
+best achiever is run : tensor(126)
+goal achieved by the best achiever :tensor([ 0.0746,  0.0257, -0.1117])
+Write status file ...
+Finished.
