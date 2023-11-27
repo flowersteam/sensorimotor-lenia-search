@@ -10,7 +10,8 @@ seed = <repetition_id>
 
 dset_name="<dset_name>"
 
-out_dir = os.environ["ALL_CCFRSCRATCH"]+"/sensorimotor_lenia/Figure_3/"+dset_name+"/seed"+str(seed)
+out_dir = "../../data/"+dset_name+"/results_generalization/seed"+str(seed)
+creatures_categories_filepath="../../data/creatures_categories.json"
 
 def get_system_config():
     system_config = Dict()
@@ -27,7 +28,7 @@ def get_system_config():
 def get_stat_config():
     stat_config = Dict()
 
-    stat_config.categories_filepath = os.environ["ALL_CCFRSCRATCH"]+"/sensorimotor_lenia/resources/creatures_categoriesV2.json"
+    stat_config.categories_filepath = creatures_categories_filepath
     stat_config.categories_filter = Dict(<categories_filter>)
 
     stat_config.dset_name = dset_name

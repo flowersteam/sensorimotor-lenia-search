@@ -20,8 +20,7 @@ torch.manual_seed(seed)
 np.random.seed(seed)
 
 
-crea_seed=seed//10
-sub_seed=seed%10
+
 
 
 """ --------------------------------------------------------------------------------------------------------
@@ -469,7 +468,7 @@ def avg_speed_test(center_positions,SX,SY,t_1=150,t_2=2000,dt=10):
     return avg_speed
 
 
-with open(os.environ["ALL_CCFRSCRATCH"]+"/sensorimotor_lenia/resources/creatures_categories_init.json", 'r') as f:
+with open(path_categories_file, 'r') as f:
   data = json.load(f)
 
 
@@ -490,178 +489,168 @@ system = Lenia_C(initialization_space=initialization_space, config=lenia_config,
 
 
 
-pf=os.environ["ALL_CCFRSCRATCH"]+"/sensorimotor_lenia/resources/"+type_expe+"_exploration/"
+pf=data_path+"/"+type_expe+"_exploration/"
 
 
-total_seed=0
 
-for key in list_data.keys():
-
-    if(key[4]==str(crea_seed)):
-        
-        crea_info=list_data[key]
-        if( (crea_info["is_robust"] and crea_info["is_soliton"] and crea_info["is_long_term_stable"])):
-            total_seed+=1
-print(total_seed)
             
 
 
 performances=Dict()
 ctr=0
-print(sub_seed*(total_seed//10+1),(sub_seed+1)*(total_seed//10+1))
+
 for key in list_data.keys():
-    if(key[4]==str(crea_seed)):
+    if(key[4]==str(seed)):
         crea_info=list_data[key]
 
 
         if( (crea_info["is_robust"] and crea_info["is_soliton"] and crea_info["is_long_term_stable"])):
             
             
-            if(ctr>=(sub_seed+1)*(total_seed//10+1)):
-                break
+            
             
             ctr+=1
-            if(ctr-1>=sub_seed*(total_seed//10+1)):
-                print(key)
-                file=key+".pickle"
-                stats=torch.load(pf+"stats/stats_"+file)
+            print(key)
+            file=key+".pickle"
+            stats=torch.load(pf+"stats/stats_"+file)
 
-                perf=Dict()
-
-
-
-                speed=avg_speed_test(stats['activation_center_position'],SX=256,SY=256)
-                perf["speed_no_obs"]=speed
-
-                #print(label.dtype)
-                parameters=torch.load(pf+"parameters/"+file)
-                policy_parameters=parameters["policy_parameters"]
+            perf=Dict()
 
 
 
-                #static random
-                robu=0
-                avg_speed=0
-                list_statistics=[]
+            speed=avg_speed_test(stats['activation_center_position'],SX=256,SY=256)
+            perf["speed_no_obs"]=speed
 
-                abs_pos=stats["activation_center_position"]
-                obs_pos=np.mod(abs_pos[1000],256)
-                for i in range(50):
-
-                    with torch.no_grad():
-                        t=time.time()
-                        system.config.speed_x=0
-                        system.reset(initialization_parameters=policy_parameters['initialization'],
-                                        update_rule_parameters=policy_parameters['update_rule'])
-
-                        system.random_obstacle_bis(23,pos_obs=obs_pos)
-                        system.generate_init_state_bis()
-
-                        observations=system.run()
-
-                        statistics=calc_statistics(observations["states"][:,:,:,0].cpu().numpy(),parameters)
-
-                        crea_is_robust = bool(is_robust(statistics, low_mass_threshold=0, high_mass_threshold=6400, num_cells=256*256))
-
-                        crea_is_long_term_stable= bool(is_long_term_stable(statistics,
-                                                                             phase1_timepoints=(0, 1 / 4),
-                                                                             phase2_timepoints=(3 / 4, 1),
-                                                                             low_ratio_threshold=0.,
-                                                                             high_ratio_threshold=2.0))
-                        crea_is_soliton = bool(is_soliton(statistics, low_nr_objects=0, high_nr_objects=2, max_activity=0.6*256*256))
-
-                        #is_moving = bool(is_moving(statistics, min_distance_from_init=100, final_step=1000))
-                        if(crea_is_robust and crea_is_long_term_stable and crea_is_soliton):
-                            robu+=1/50
-                            speed=avg_speed_test(statistics['activation_center_position'],SX=256,SY=256,dt=25)
-                        else:
-                            speed=0
-                        statistics["speed"]=speed
-                        list_statistics.append(statistics)
-                        avg_speed+=speed/50
-                torch.save(list_statistics,os.environ["ALL_CCFRSCRATCH"]+"/sensorimotor_lenia/resources/"+type_expe+"_exploration/tests/"+key+"_stats_tests_static.pickle")
-                perf["speed_obs"]=avg_speed
-                perf["robustness_obstacles"]=robu
-                print(robu,avg_speed)
+            #print(label.dtype)
+            parameters=torch.load(pf+"prefilter_parameters/"+file)
+            policy_parameters=parameters["policy_parameters"]
 
 
 
+            #static random
+            robu=0
+            avg_speed=0
+            list_statistics=[]
 
-                robu=0   
-                list_statistics=[]
-                #moving obstacles speed 1
-                for i in range(50):
-                    with torch.no_grad():
-                        system.config.speed_x=-1
-                        system.reset(initialization_parameters=policy_parameters['initialization'],
-                                        update_rule_parameters=policy_parameters['update_rule'])
+            # to put an obstacle in the trajectory look at the position without obstacles and put an obstacle there
+            abs_pos=stats["activation_center_position"]
+            obs_pos=np.mod(abs_pos[1000],256)
+            for i in range(50):
 
+                with torch.no_grad():
+                    t=time.time()
+                    system.config.speed_x=0
+                    system.reset(initialization_parameters=policy_parameters['initialization'],
+                                    update_rule_parameters=policy_parameters['update_rule'])
 
-                        system.random_obstacle_bis(23,pos_obs=obs_pos)
-                        system.generate_init_state_bis()
-                        # the method system.run() launches a rollout in Lenia
-                        observations=system.run()
-                        statistics=calc_statistics(observations["states"][:,:,:,0].cpu().numpy(),parameters)
+                    system.random_obstacle_bis(23,pos_obs=obs_pos)
+                    system.generate_init_state_bis()
 
-                        crea_is_robust = bool(is_robust(statistics, low_mass_threshold=0, high_mass_threshold=6400, num_cells=256*256))
+                    observations=system.run()
 
-                        crea_is_long_term_stable= bool(is_long_term_stable(statistics,
-                                                                             phase1_timepoints=(0, 1 / 4),
-                                                                             phase2_timepoints=(3 / 4, 1),
-                                                                             low_ratio_threshold=0.,
-                                                                             high_ratio_threshold=2.0))
-                        crea_is_soliton = bool(is_soliton(statistics, low_nr_objects=0, high_nr_objects=2, max_activity=0.6*256*256))
+                    statistics=calc_statistics(observations["states"][:,:,:,0].cpu().numpy(),parameters)
 
-                        #is_moving = bool(is_moving(statistics, min_distance_from_init=100, final_step=1000))
-                        if(crea_is_robust and crea_is_long_term_stable and crea_is_soliton):
-                            robu+=1/50
+                    crea_is_robust = bool(is_robust(statistics, low_mass_threshold=0, high_mass_threshold=6400, num_cells=256*256))
 
-                        list_statistics.append(statistics)
-                torch.save(list_statistics,os.environ["ALL_CCFRSCRATCH"]+"/sensorimotor_lenia/resources/"+type_expe+"_exploration/tests/"+key+"_stats_tests_move1.pickle")
-                perf["robustness_moving_obstacles1"]=robu
+                    crea_is_long_term_stable= bool(is_long_term_stable(statistics,
+                                                                         phase1_timepoints=(0, 1 / 4),
+                                                                         phase2_timepoints=(3 / 4, 1),
+                                                                         low_ratio_threshold=0.,
+                                                                         high_ratio_threshold=2.0))
+                    crea_is_soliton = bool(is_soliton(statistics, low_nr_objects=0, high_nr_objects=2, max_activity=0.6*256*256))
 
-
-                robu=0  
-                avg_speed=0
-                list_statistics=[]
-                #moving obstacles speed 2
-                for i in range(50):
-                    with torch.no_grad():
-
-                        system.config.speed_x=-2
-                        system.reset(initialization_parameters=policy_parameters['initialization'],
-                                        update_rule_parameters=policy_parameters['update_rule'])
-
-
-                        system.random_obstacle_bis(15,pos_obs=obs_pos)
-                        system.generate_init_state_bis()
-                        # the method system.run() launches a rollout in Lenia
-                        observations=system.run()
-                        statistics=calc_statistics(observations["states"][:,:,:,0].cpu().numpy(),parameters)
-
-                        crea_is_robust = bool(is_robust(statistics, low_mass_threshold=0, high_mass_threshold=6400, num_cells=256*256))
-
-                        crea_is_long_term_stable= bool(is_long_term_stable(statistics,
-                                                                             phase1_timepoints=(0, 1 / 4),
-                                                                             phase2_timepoints=(3 / 4, 1),
-                                                                             low_ratio_threshold=0.,
-                                                                             high_ratio_threshold=2.0))
-                        crea_is_soliton = bool(is_soliton(statistics, low_nr_objects=0, high_nr_objects=2, max_activity=0.6*256*256))
-
-                        #is_moving = bool(is_moving(statistics, min_distance_from_init=100, final_step=1000))
-                        if(crea_is_robust and crea_is_long_term_stable and crea_is_soliton):
-                            robu+=1/50
+                    #is_moving = bool(is_moving(statistics, min_distance_from_init=100, final_step=1000))
+                    if(crea_is_robust and crea_is_long_term_stable and crea_is_soliton):
+                        robu+=1/50
+                        speed=avg_speed_test(statistics['activation_center_position'],SX=256,SY=256,dt=25)
+                    else:
+                        speed=0
+                    statistics["speed"]=speed
+                    list_statistics.append(statistics)
+                    avg_speed+=speed/50
+            torch.save(list_statistics,pf+key+"_stats_tests_static.pickle")
+            perf["speed_obs"]=avg_speed
+            perf["robustness_obstacles"]=robu
+            print(robu,avg_speed)
 
 
-                        list_statistics.append(statistics)
 
-                torch.save(list_statistics,os.environ["ALL_CCFRSCRATCH"]+"/sensorimotor_lenia/resources/"+type_expe+"_exploration/tests/"+key+"_stats_tests_move2.pickle")
-                perf["robustness_moving_obstacles2"]=robu
-                print(key,perf)
 
-                performances[key]=perf
+            robu=0
+            list_statistics=[]
+            #moving obstacles speed 1
+            for i in range(50):
+                with torch.no_grad():
+                    system.config.speed_x=-1
+                    system.reset(initialization_parameters=policy_parameters['initialization'],
+                                    update_rule_parameters=policy_parameters['update_rule'])
+
+
+                    system.random_obstacle_bis(23,pos_obs=obs_pos)
+                    system.generate_init_state_bis()
+                    # the method system.run() launches a rollout in Lenia
+                    observations=system.run()
+                    statistics=calc_statistics(observations["states"][:,:,:,0].cpu().numpy(),parameters)
+
+                    crea_is_robust = bool(is_robust(statistics, low_mass_threshold=0, high_mass_threshold=6400, num_cells=256*256))
+
+                    crea_is_long_term_stable= bool(is_long_term_stable(statistics,
+                                                                         phase1_timepoints=(0, 1 / 4),
+                                                                         phase2_timepoints=(3 / 4, 1),
+                                                                         low_ratio_threshold=0.,
+                                                                         high_ratio_threshold=2.0))
+                    crea_is_soliton = bool(is_soliton(statistics, low_nr_objects=0, high_nr_objects=2, max_activity=0.6*256*256))
+
+                    #is_moving = bool(is_moving(statistics, min_distance_from_init=100, final_step=1000))
+                    if(crea_is_robust and crea_is_long_term_stable and crea_is_soliton):
+                        robu+=1/50
+
+                    list_statistics.append(statistics)
+            torch.save(list_statistics,pf+key+"_stats_tests_move1.pickle")
+            perf["robustness_moving_obstacles1"]=robu
+
+
+            robu=0
+            avg_speed=0
+            list_statistics=[]
+            #moving obstacles speed 2
+            for i in range(50):
+                with torch.no_grad():
+
+                    system.config.speed_x=-2
+                    system.reset(initialization_parameters=policy_parameters['initialization'],
+                                    update_rule_parameters=policy_parameters['update_rule'])
+
+
+                    system.random_obstacle_bis(15,pos_obs=obs_pos)
+                    system.generate_init_state_bis()
+                    # the method system.run() launches a rollout in Lenia
+                    observations=system.run()
+                    statistics=calc_statistics(observations["states"][:,:,:,0].cpu().numpy(),parameters)
+
+                    crea_is_robust = bool(is_robust(statistics, low_mass_threshold=0, high_mass_threshold=6400, num_cells=256*256))
+
+                    crea_is_long_term_stable= bool(is_long_term_stable(statistics,
+                                                                         phase1_timepoints=(0, 1 / 4),
+                                                                         phase2_timepoints=(3 / 4, 1),
+                                                                         low_ratio_threshold=0.,
+                                                                         high_ratio_threshold=2.0))
+                    crea_is_soliton = bool(is_soliton(statistics, low_nr_objects=0, high_nr_objects=2, max_activity=0.6*256*256))
+
+                    #is_moving = bool(is_moving(statistics, min_distance_from_init=100, final_step=1000))
+                    if(crea_is_robust and crea_is_long_term_stable and crea_is_soliton):
+                        robu+=1/50
+
+
+                    list_statistics.append(statistics)
+
+            torch.save(list_statistics,pf+key+"_stats_tests_move2.pickle")
+            perf["robustness_moving_obstacles2"]=robu
+            print(key,perf)
+
+            performances[key]=perf
                 
-with open(os.environ["ALL_CCFRSCRATCH"]+"/sensorimotor_lenia/resources/"+type_expe+"_exploration/tests/"+'perfs_seed'+str(crea_seed)+'_subseed'+str(sub_seed)+'.json', 'w') as f:
+with open(pf+'perfs_seed'+str(seed)+'.json', 'w') as f:
     json.dump(performances, f)
  
 print("finished")                

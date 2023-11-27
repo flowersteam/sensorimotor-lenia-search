@@ -88,17 +88,20 @@ def is_moving(statistics, min_distance_from_init=100, final_step=500):
 if __name__ == "__main__":
 
     json_data = {}
-    json_filepath = 'creatures_categories.json'
-    resources_dir = "/gpfsscratch/rech/imi/commun/sensorimotor_lenia/resources/"
+    json_filepath = '../data/creatures_categories.json'
+    resources_dir = "../data/"
     dset_directories = ['imgep_exploration', 'random_exploration', 'handmade_exploration']
+    
+    
+    
     for dset_dir in dset_directories:
         json_data[dset_dir] = {}
-        for crea_filename in os.listdir(dset_dir+"/parameters"):
+        for crea_filename in os.listdir(resources_dir+dset_dir+"/prefilter_parameters"):
             if crea_filename[-7:] == ".pickle":
                 crea_name = crea_filename[:-7]
                 if crea_name not in json_data[dset_dir]:
                     json_data[dset_dir][crea_name] = {}
-                    json_data[dset_dir][crea_name]['parameters'] = resources_dir + dset_dir+"/parameters/"+crea_filename
+                    json_data[dset_dir][crea_name]['parameters'] = resources_dir + dset_dir+"/prefilter_parameters/"+crea_filename
                     assert os.path.exists(json_data[dset_dir][crea_name]['parameters'])
                     json_data[dset_dir][crea_name]['observations'] = resources_dir + dset_dir+"/observations/observations_"+crea_filename
                     assert os.path.exists(json_data[dset_dir][crea_name]['observations'])

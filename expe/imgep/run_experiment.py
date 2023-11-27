@@ -72,14 +72,7 @@ if __name__ == '__main__':
     # Run Imgep Explorer
     explorer.run(160)
 
-    # # save
-    # explorer.save('explorer.pickle')
-    #
-    #restart from checkpoint
-    # explorer = IMGEPExplorer.load('explorer.pickle', load_data=False, map_location='cpu')
-    # explorer.db = ExplorationDB(config=db_config)
-    # explorer.db.load(map_location='cpu')
-    # explorer.run(20, continue_existing_run=True)
+   
 
 
     goal_lib_copy=explorer.goal_library*1.0

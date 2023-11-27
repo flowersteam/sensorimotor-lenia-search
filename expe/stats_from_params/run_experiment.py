@@ -35,7 +35,7 @@ SX=system.config.SX
 
 count=0
 
-path=os.environ["ALL_CCFRSCRATCH"]+"/sensorimotor_lenia/resources/"+type_expe+"_exploration/parameters"
+path=path_parameters
 
 for file in os.listdir(path):
     if os.path.isfile(os.path.join(path,file)) and file.startswith('seed'+str(seed)):
@@ -64,7 +64,7 @@ for file in os.listdir(path):
             
             statistics = calc_statistics(observations[:,:,:,0].numpy(), crea_params)
                 
-            torch.save(statistics,pf+"stats/stats_"+file)
+            torch.save(statistics,path_outdata+"stats/stats_"+file)
             
             print(file,statistics['connected_components_nr_objects'])
             
