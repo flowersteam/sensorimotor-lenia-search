@@ -12,7 +12,7 @@ import warnings
 import numpy as np
 
 if __name__ == '__main__':
-    torch.manual_seed(16)
+    torch.manual_seed(0)
     np.random.seed(0)
 
 
@@ -50,9 +50,6 @@ if __name__ == '__main__':
     output_representation = LeniaCentroidRepresentation(config=output_representation_config)
     goal_space = BoxGoalSpace(output_representation)
 
-    ## Load Goal Space Representation
-
-    # goal_space = BoxGoalSpace(output_representation,low=torch.tensor([0,-0.5,-0.5]),high=torch.tensor([2,0.5,0.5]),autoexpand=False)
 
     ## Load imgep explorer
     explorer_config = IMGEPExplorer.default_config()
@@ -67,15 +64,6 @@ if __name__ == '__main__':
 
     # Run Imgep Explorer
     explorer.run(160)
-
-    # # save
-    # explorer.save('explorer.pickle')
-    #
-    #restart from checkpoint
-    # explorer = IMGEPExplorer.load('explorer.pickle', load_data=False, map_location='cpu')
-    # explorer.db = ExplorationDB(config=db_config)
-    # explorer.db.load(map_location='cpu')
-    # explorer.run(20, continue_existing_run=True)
 
 
     goal_lib_copy=explorer.goal_library*1.0

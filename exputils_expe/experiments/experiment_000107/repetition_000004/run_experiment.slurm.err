@@ -1,2 +1,0 @@
-/linkhome/rech/genini01/uzw47io/.local/lib/python3.9/site-packages/sensorimotorleniasearch/lenia_wrapper.py:56: UserWarning: Casting complex values to real discards the imaginary part (Triggered internally at  /gpfs7kro/gpfslocalsup/src/pub/anaconda-py3/2021.05/pytorch-1.11.0+py3.9.12/pytorch-1.11.0/aten/src/ATen/native/Copy.cpp:239.)
-  self.kernels[k] = kernel_FFT
